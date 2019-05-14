@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:annotation>
+        <xsd:documentation xml:lang="pl">
+            XML Schema - mistrzostwa.
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:element name="mistrzostwa" type="mistrzostwa_typ"/>
+
+    <xsd:complexType name="mistrzostwa_typ">
+    		<xsd:sequence>
+    			<xsd:element name="wstep">
+    				<xsd:complexType mixed="true">
+    					<xsd:sequence>
+    						<xsd:element name="osoba" type="	osoba_rozszerzony_typ"/>
+    						  <xsd:element name="miejsce">
+                                    <xsd:complexType>
+                                        <xsd:simpleContent>
+                                            <xsd:extension base="xsd:string">
+                                                <xsd:attribute name="kontynent" type="xsd:string"/>
+                                            </xsd:extension>
+                                        </xsd:simpleContent>
+                                    </xsd:complexType>
+                                </xsd:element>
+    						  <xsd:element name="data" type="data_typ"/>
+    					   </xsd:sequence>
+                        <xsd:attribute name="jezyk" type="xsd:string"/>
+    				</xsd:complexType>
+    			</xsd:element>
+    			<xsd:element name="faza" type="faza_typ"/>
+    		</xsd:sequence>
+    	<xsd:attributeGroup ref="atrybuty_mistrzostwa"/>
+    </xsd:complexType>
+
+    <xsd:attributeGroup name="atrybuty_mistrzostwa">
+        <xsd:attribute name="adres" type="adres_typ"/>
+        <xsd:attribute name="rok" type="xsd:integer"/>
+    </xsd:attributeGroup>
+
+    <xsd:complexType name="faza_typ">
+    		<xsd:sequence>
+    			<xsd:element name="faza_rozgrywek" type="faza_rozgrywek_typ" minOccurs="1" maxOccurs="unbounded"/>
+    		</xsd:sequence>
+    	<xsd:attribute ref="etap" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="faza_rozgrywek_typ">
+    	<xsd:sequence>
+    		<xsd:element name="mecz" minOccurs="1" maxOccurs="4">
+    				<xsd:complexType>
+    				    <xsd:sequence>
+    						<xsd:element name="druzyna" minOccurs="2" maxOccurs="2">
+                                <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:pattern value="[A-Z]{1}.*"/>
+                                        </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>      
+     
+    						<xsd:element name="wynik">
+                                <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:pattern value="\d{1}:\d{1}"/>
+                                        </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element> 
+
+    						<xsd:element ref="zdjecie" minOccurs="0"/>
+    					</xsd:sequence>
+
+    					<xsd:attribute ref="nr" />
+
+    				</xsd:complexType>
+    			</xsd:element>
+    		</xsd:sequence>
+    	<xsd:attribute ref="etap"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="osoba_rozszerzony_typ">
+    	<xsd:simpleContent>
+    		<xsd:extension base="osoba_typ">
+    			<xsd:attribute name="plec">
+    				<xsd:simpleType>
+    					<xsd:restriction base="xsd:string">
+    						<xsd:enumeration value="mezczyzna"/>
+    						<xsd:enumeration value="kobieta"/>
+    					</xsd:restriction>
+    				</xsd:simpleType>
+    			</xsd:attribute>
+    		</xsd:extension>
+    	</xsd:simpleContent>
+    </xsd:complexType>
+
+
+    <xsd:attribute name="nr" type="nr_typ"/>
+
+    <xsd:simpleType name="nr_typ">
+        <xsd:restriction base="xsd:integer">
+            <xsd:maxExclusive value="5"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="osoba_typ">
+    	<xsd:restriction base="xsd:string">
+    		<xsd:minLength value="6"/>
+    		<xsd:maxLength value="40"/>
+    	</xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="adres_typ">
+    	<xsd:restriction base="xsd:string">
+    		<xsd:pattern value="https://pl.*"/>
+    	</xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:attribute name="etap" type="etap_typ"/>
+
+    <xsd:simpleType name="etap_typ">
+    	<xsd:restriction base="xsd:string">
+    		<xsd:minLength value="5"/>
+    	</xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="zdjecie" type="zdjecie_rozszerzony_typ"/>
+
+    <xsd:simpleType name="zdjecie_typ">
+    	<xsd:restriction base="xsd:string">
+    		<xsd:pattern value="zdjecia.*"/>
+    	</xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="zdjecie_rozszerzony_typ">
+        <xsd:simpleContent>
+            <xsd:extension base="zdjecie_typ">
+                <xsd:attribute name="format">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:enumeration value="jpg"/>
+                            <xsd:enumeration value="png"/>
+                            <xsd:enumeration value="svg"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="data_typ">
+    	<xsd:union memberTypes="slownie liczbowo"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="slownie">
+        <xsd:restriction base="lista_typ"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="lista_typ">
+    	<xsd:list itemType="nazwa_listy"/>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="nazwa_listy">
+    	<xsd:restriction base="xsd:string">
+    		<xsd:maxLength value="70"/>
+    	</xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="liczbowo">
+    	<xsd:restriction base="xsd:date"/>
+    </xsd:simpleType>
+
+    </xsd:schema>

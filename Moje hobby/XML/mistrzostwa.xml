@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mistrzostwa adres="https://pl.wikipedia.org/wiki/Mistrzostwa_Europy_w_Pi%C5%82ce_No%C5%BCnej_2016#Faza_pucharowa" rok="2016">
+
+	<wstep jezyk="pl">
+	Czesc. Jestem <osoba plec="mezczyzna">Blazej Niedzwiecki</osoba> i chcialbym przedstawic Wam, jak wygladaly ostatnie Mistrzostwa Swiata w <miejsce kontynent="Ameryka Południowa">Brazylii</miejsce>, ktore rozpoczely sie <data>dziesiatego czerwca dwatysiace szesnastego roku - 2016-06-10</data> i na ktorych nasza reprezentacja doszla do cwiercfinalu. Serdecznie zapraszam.
+	</wstep>
+
+	<faza etap="pucharowa">
+		<faza_rozgrywek etap="cwiercfinal">
+			<mecz nr="1">
+				<druzyna>Polska</druzyna>
+				<druzyna>Portugalia</druzyna>
+				<wynik>1:1</wynik>
+				<zdjecie format="jpg">zdjecia\polska_portugalia.jpg</zdjecie>
+			</mecz>
+			<mecz nr="2">
+				<druzyna>Walia</druzyna>
+				<druzyna>Belgia</druzyna>
+				<wynik>3:1</wynik>
+				<zdjecie format="jpg">zdjecia\walia_belgia.jpg</zdjecie>
+			</mecz>
+			<mecz nr="3">
+				<druzyna>Niemcy</druzyna>
+				<druzyna>Wlochy</druzyna>
+				<wynik>1:1</wynik>
+				<zdjecie format="jpg">zdjecia\niemcy_wlochy.jpg</zdjecie>
+			</mecz>
+			<mecz nr="4">
+				<druzyna>Francja</druzyna>
+				<druzyna>Islandia</druzyna>
+				<wynik>5:2</wynik>
+				<zdjecie format="jpg">zdjecia\francja_islandia.jpg</zdjecie>
+			</mecz>
+
+
+		</faza_rozgrywek>
+
+		<faza_rozgrywek etap="polfinal">
+			<mecz nr="1">
+				<druzyna>Portugalia</druzyna>
+				<druzyna>Walia</druzyna>
+				<wynik>2:0</wynik>
+			</mecz>
+			<mecz nr="2">
+				<druzyna>Niemcy</druzyna>
+				<druzyna>Francja</druzyna>
+				<wynik>0:2</wynik>
+			</mecz>
+		</faza_rozgrywek>
+
+		<faza_rozgrywek etap="final">
+			<mecz nr="1">
+				<druzyna>Portugalia</druzyna>
+				<druzyna>Francja</druzyna>
+				<wynik>1:0</wynik>
+			</mecz>
+		</faza_rozgrywek>
+
+	</faza>
+
+
+</mistrzostwa>

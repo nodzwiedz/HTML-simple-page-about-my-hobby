@@ -1,0 +1,140 @@
+body
+{
+	background-color: white;
+	color: white; 
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+}
+
+#container
+{
+	width:1000px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#naglowek
+{
+	float:left;
+	width:540px;
+	height: 105px;
+	background-color: black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 30px;
+	padding-left: 30px;
+	text-align: center;
+	color: gold;
+}
+
+#menu
+{
+	clear:both;
+	width:200px;
+	height: 650px;
+	background-color: gold;
+	float:left;
+	line-height: 250%;
+	font-size: 18px;
+}
+
+#tresc
+{
+	width:750px;
+	height: 650px;
+	background-color: #99FF99;
+	float:left;
+	padding-right: 25px;
+	padding-left: 25px;
+	line-height: 150%;
+}
+
+#stopka
+{
+	clear:both;
+	width: 1000px;
+	height: 30px;
+	background-color: black;
+	font-size: 18px;
+	text-align: center;
+	padding-top: 5px;
+}
+
+#pilka
+{
+	float:left;
+	width:200px;
+	height: 125px;
+	background-color: black;
+	
+}
+
+a.link
+{
+	color:#ffffff;
+	text-decoration: underline;
+}
+
+h4
+{
+	text-align: center;
+	color: black;
+	font-size: 25px;
+}
+
+p
+{
+	font-weight: 600;
+	color: black;
+	font-size: 17px;
+}
+
+.scroll_up
+{
+	width:75px;
+	height: 64px;
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	text-decoration: none;
+	}
+
+.galeria img
+{
+	margin-top: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+	opacity : 0.85;
+}
+
+.galeria img:hover
+{
+	opacity: 1;
+}
+
+ol > li > ul
+{
+	display: none;
+}
+
+ol > li:hover > ul
+{
+	display: block;
+}
+
+.osiagi
+{
+	border:solid;
+	border-color: black;
+	color: black;
+	text-align: center;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+form
+{
+	color: black;
+	font-weight: 600;
+	font-size: 16px;
+}
